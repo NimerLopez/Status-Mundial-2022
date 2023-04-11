@@ -68,8 +68,8 @@ function Login() {
     return (
 
         <>
-            <Header></Header>
-            {estado ? (
+            <Header></Header>       
+            {estado ? (//validador tofact estado
                 <ToFact email={email} token={respu}/>
             ) : (
                 <div className="logbox">
@@ -86,8 +86,9 @@ function Login() {
                         <input onClick={() => Logival()} type="submit" name="A3" value="Login"></input>
                     </div>
                     <p>If you don´t have an acount. <a href="/register">Signup Here</a></p>
+                    <p>forgot the password. <a href="/passworles/solicitud">click here</a></p>                   
                 </div>
-            )}
+            )}{/* fin de Tofact validador */}
 
 
         </>

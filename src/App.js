@@ -11,7 +11,8 @@ import Categoryadd from './Components/CRUDS/Categoryadd/category';
 import Newsources from './Components/CRUDS/Newsources/newsources';
 import NewsourcesCrud from './Components/CRUDS/NewSourcesCRUD/newsourcescrud';
 import ConfEmial from './Components/ConfEmail/CofEmial';
-
+import Passworles from './Components/Passwordless/Passwordless';
+import PassworlesSoli from './Components/Passwordless/Solicitud_Passwordless';
 import { Route, Routes } from 'react-router-dom';
 //npm install axios
 //npm install react-router-dom
@@ -28,6 +29,8 @@ function App() {
         <Route path='/categorytable' element={<CategoryCRUD/>}/>
         <Route path='/newSourcetable' element={<NewsourcesCrud/>}/>
         <Route path='/confirmar' element={<ConfEmial/>}/>
+        <Route path='/passwordless' element={<Passworles/>}/>
+        <Route path='/passworles/solicitud' element={<PassworlesSoli/>}/>
 
       </Routes>
       <Footer/>
