@@ -1,0 +1,25 @@
+.header{
+    margin-top: 2%;
+    margin-left: 4%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+
+.dropdown-content{
+    width:12%;
+    margin-right :7%;
+}
+
+h3{
+    font-size: 40px;
+}
+.dropdown-content select{
+    background-color:gray ;
+    border:none;
+}
+
+.dropdown-content option{
+    background-color:white ;
+}

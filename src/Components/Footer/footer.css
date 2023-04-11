@@ -1,0 +1,27 @@
+ 
+.footer{
+    bottom: 0;
+    width: 100%;
+}
+
+.footer ul li{
+    list-style: none;
+    padding: 10px 10px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0.5%;
+}
+
+.footer ul li a{
+    color:var(--fontgraycolor);
+    text-decoration: none ;
+    font-size: 15px;
+}
+
+.footer p{
+    color:var(--fontgraycolor);
+}
+
+.footer p i{
+    margin-right: 1%;
+}

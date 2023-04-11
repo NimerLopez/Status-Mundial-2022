@@ -1,0 +1,64 @@
+.sign-in-title{
+    margin: 5% 0% 12% -50%;
+}
+.empty {
+    border-color: red;
+  }
+
+.sign-in-box{
+    margin-left: 1%;
+    width: 700px;
+    height: 600px;
+}
+
+.sign-in-inputs{ 
+    border-top: 1px  gray solid;
+    border-bottom: 1px  gray solid;
+    padding-bottom: 3%;
+
+}
+
+.sign-in-inputs input{
+    margin-top: 2%;
+    width: 42%;
+    height: 40px;
+    margin-left: 4%; margin-right: auto;
+
+}
+.sign-in-inputs input[type="text"]{
+    margin-top: 2%;
+    
+}
+      
+/* sign-in buttons */
+.sign-in-buttons{
+    margin-top:10%;
+    gap: 1%;
+    
+}
+
+.sign-in-buttons input[value="Sign up"]{
+    color: var(--whitecolor);
+    background-color: var(--itemsgraycolor);
+    width: 50%;
+    height: 50px;
+    border: none;
+    margin-left: -35%;
+}
+
+sign-in-buttons input[placeholder="Address 1"]{
+    width: 85%;
+}
+
+sign-in-buttons input[placeholder="Address 2"]{
+    width: 85%;
+}
+
+/*sign-in dropdown menu*/
+
+select{
+    width: 40%;
+    height: 25px;
+    margin-left: 4.6%;
+}
+

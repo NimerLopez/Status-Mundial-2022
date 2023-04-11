@@ -1,0 +1,52 @@
+.titles{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 35px; color:rgba(128, 128, 128, 0.603);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.37);
+    margin-bottom: 5%;
+    padding-bottom: 7px;
+}
+
+#edit{
+    color: rgb(0, 153, 255);
+    text-decoration: underline;
+}
+
+.sources-box{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.sources-table{
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.sources-table tr{
+    height: 50px;
+}
+
+th {
+    border: 1px solid rgba(128, 128, 128, 0.507);
+}
+
+td{
+    border: 1px solid rgba(128, 128, 128, 0.507);
+}
+
+.add-button-crudlink{
+    margin-top: 5%;
+    margin-left: -45%;
+    position: absolute;
+    background: rgb(85, 85, 85);
+    color: rgba(248, 248, 248, 0.808)!important;
+    padding: 1% 40px;
+    outline: none;
+    border: none;
+    color: var(--whitecolor);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.menu{
+    background: rgba(189, 189, 189, 0.61);
+}
