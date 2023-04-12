@@ -35,7 +35,8 @@ function Login() {
                 if (response.data.message !== "Datos Incorrectos") {
                     setEstado(true);
                     setRespuesta(response.data.token);
-
+                    console.log(response.data.useDate.id); 
+                    sessionStorage.setItem('User_id',JSON.stringify(response.data.useDate.id));   
                     // Dateuser = response.data.token;
                     // sessionStorage.setItem('Usuario',JSON.stringify(Dateuser));
                     // console.log("luisraton", Dateuser);

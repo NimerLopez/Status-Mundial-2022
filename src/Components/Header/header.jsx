@@ -43,6 +43,7 @@ function Header() {
         if (selectedOption === "Logout") {
             navigate("/");
             sessionStorage.removeItem('Usuario');
+            sessionStorage.removeItem('User_id');
         }
         if(selectedOption === "ActualizarData"){
             alert("entro");

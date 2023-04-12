@@ -36,33 +36,59 @@ function Home() {
                 }
             }).then(function (response) {
                 console.log(response.data);
-                setNew(response.data);
-                setGuard(response.data);
+                //setNew(response.data);
+                //setGuard(response.data);
 
             }).catch(err => {//valida errores
                 console.log("error: " + err);
             });
-            //request category 
-            axios.get('http://localhost:3001/api/categories/public', {
-                headers: {
-                    'Authorization': 'Bearer ' + loggedUser,
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (response) {
-                console.log(response.data);
-                setCategory(response.data);
-                setLoading(false);
-
-            }).catch(err => {//valida errores
-                setLoading(false);
-                console.log("error: " + err);
-            });
+            const query = `
+            query Query($dataNewByUserIdId: String) {
+                dataNewByUserID(
+                    id: $dataNewByUserIdId
+                ) {
+                    _id
+                    title
+                    user_id
+                    category_id
+                    }
+                }`;
+                const variables = {
+                    dataNewByUserIdId:JSON.parse(sessionStorage.getItem('User_id')) ,
+                  };
+                 
+                    axios.post('http://localhost:4001/', { query, variables }).then(function(response){
+                        console.log(response.data.data);
+                        setGuard(response.data.data.dataNewByUserID);
+                        setNew(response.data.data.dataNewByUserID);
+                    }).catch(err=>{
+                        console.console.log(err);
+                    });                   
+                    // Hacer algo con los datos
+                 
 
         } else {
             //***Redirect to login***
             navigate("/")
         }
 
+    }, []);
+    useEffect(() => {
+        //request category 
+        axios.get('http://localhost:3001/api/categories/public', {
+            headers: {
+                'Authorization': 'Bearer ' + loggedUser,
+                'Content-Type': 'application/json'
+            }
+        }).then(function (response) {
+            console.log(response.data);
+            setCategory(response.data);
+            setLoading(false);
+
+        }).catch(err => {//valida errores
+            setLoading(false);
+            console.log("error: " + err);
+        });
     }, []);
 
     // const ObtenerId=(event)=>{
@@ -75,13 +101,13 @@ function Home() {
     const handleClick = (id) => {
         if (id) {
             //get NOTICIAS CATEGORIA
-            axios.get("http://localhost:3001/api/new/myNew/categoryid/"+id,  {
+            axios.get("http://localhost:3001/api/new/myNew/categoryid/" + id, {
                 headers: {
                     'Authorization': 'Bearer ' + loggedUser,
                     'Content-Type': 'application/json'
                 }
             }).then(function (response) {
-                console.log(response.data);               
+                console.log(response.data);
                 setNew(response.data);
                 //navigate("/categorytable")
             }).catch(err => {//valida errores
@@ -90,38 +116,38 @@ function Home() {
 
 
 
-        }else{           
+        } else {
             setNew(guardnew);
         }
     }
 
-        console.log(categoryid)
-        return (
-            <div className="dashboard">
-                <Header></Header>
-                {loading ?
-                    (<p>Cargando...</p>) : (
-                        <>
-                            <h1>Your unique News Cover</h1>
-                            <div className="filters">
-                                <nav>
-                                    <ul>
-                                        <li><a href="#" onClick={() => handleClick()} >Todo</a></li>
-                                        {categoriob.map((categoria) => (
-                                            <li><a href="#" onClick={() => handleClick(categoria._id)} >{categoria.name}</a></li>
-                                        ))}
-                                    </ul>
-                                </nav>
+    console.log(categoryid)
+    return (
+        <div className="dashboard">
+            <Header></Header>
+            {loading ?
+                (<p>Cargando...</p>) : (
+                    <>
+                        <h1>Your unique News Cover</h1>
+                        <div className="filters">
+                            <nav>
+                                <ul>
+                                    <li><a href="#" onClick={() => handleClick()} >Todo</a></li>
+                                    {categoriob.map((categoria) => (
+                                        <li><a href="#" onClick={() => handleClick(categoria._id)} >{categoria.name}</a></li>
+                                    ))}
+                                </ul>
+                            </nav>
+                        </div>
+                        <div className="news">
+                            <div className="wrap-news">
+                                {newList}
                             </div>
-                            <div className="news">
-                                <div className="wrap-news">
-                                    {newList}
-                                </div>
-                            </div>
-                        </>
-                    )}
-            </div>
-        )
+                        </div>
+                    </>
+                )}
+        </div>
+    )
 
-    }
-    export default Home;
+}
+export default Home;
