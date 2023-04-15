@@ -11,39 +11,37 @@ function Newsourcescrud() {
     let [newob, setNew] = useState({});
     let [categoriob, setCategory] = useState({});
     const [loadingNew, setLoadingNew] = useState(true);
-
+    sessionStorage.removeItem('DataSource');
 
     useEffect(() => {
         if (loggedUser) {
-            //request my new by token id
-            axios.get('http://localhost:3001/api/myNewSource', {
-                headers: {
-                    'Authorization': 'Bearer ' + loggedUser,
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (response) {
-                console.log(response.data);
-                setNew(response.data);
+            const query = `
+            query Query($myNewsSourceId: String) {
+                MyNewsSource(id: $myNewsSourceId) {
+                    _id
+                    name
+                    url
+                    category_id
+                    user_id
+                  }
+                Categorias {
+                        _id
+                        name
+                      }   
+                }`;
+            const variables = {
+                myNewsSourceId: JSON.parse(sessionStorage.getItem('User_id')),
+            };
+
+            axios.post('http://localhost:4001/', { query, variables }).then(function (response) {
+                console.log(response.data.data);
                 setLoadingNew(false);
-
-            }).catch(err => {//valida errores
-                console.log("error: " + err);
-            });
-            //request category 
-            axios.get('http://localhost:3001/api/categories/public', {
-                headers: {
-                    'Authorization': 'Bearer ' + loggedUser,
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (response) {
-                console.log(response.data);
-                setCategory(response.data);
+                setNew(response.data.data.MyNewsSource);
+                setCategory(response.data.data.Categorias);
                 setLoadingCategory(false);
-
-            }).catch(err => {//valida errores
-                console.log("error: " + err);
+            }).catch(err => {
+                console.console.log(err);
             });
-
         } else {
             //***Redirect to login***
             navigate("/")

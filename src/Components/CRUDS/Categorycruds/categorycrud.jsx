@@ -9,21 +9,31 @@ function CategoryCRUD() {
     let [loggedUser, setval] = useState(JSON.parse(sessionStorage.getItem('Usuario')))
     const [loading, setLoading] = useState(true);
     let [categoriob, setCategory] = useState({});
-
+    sessionStorage.removeItem('Data');
     useEffect(() => {
-        axios.get('http://localhost:3001/api/categories/public', {
-            headers: {
-                'Authorization': 'Bearer ' + loggedUser,
-                'Content-Type': 'application/json'
-            }
-        }).then(function (response) {
-            console.log(response.data);
-            setCategory(response.data);
-            setLoading(false);
-        }).catch(err => {//valida errores
-            setLoading(false);
-            console.log("error: " + err);
-        });
+        if (loggedUser) {
+            const query = `
+            query Query {
+                Categorias {
+                  name
+                  _id
+                }
+              }`;
+            axios.post('http://localhost:4001/', {query}).then(function (response) {
+                console.log(response.data.data);
+                setCategory(response.data.data.Categorias);
+                setLoading(false);
+            }).catch(err => {
+                console.log("xxxxxxx");
+                console.log("Error",err);
+            });
+            // Hacer algo con los datos
+
+
+        } else {
+            //***Redirect to login***
+            navigate("/")
+        }
     }, []);
     const DeleteCategory = (id) => {//elimina categorias
         axios.delete("http://localhost:3001/api/categories/" + id, {

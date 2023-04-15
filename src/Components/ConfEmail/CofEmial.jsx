@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate,useLocation } from "react-router"
 import axios from "axios";
 function ConfEmail() {
+    const navigate = useNavigate();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const correo = searchParams.get('correo');
@@ -14,6 +15,7 @@ function ConfEmail() {
                 'Content-Type': 'application/json'
             }
         }).then(function (response) {
+            navigate('/');
             console.log(response);
         }).catch(err => {//valida errores
             console.log("error: " + err);

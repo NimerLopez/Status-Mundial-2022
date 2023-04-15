@@ -47,15 +47,17 @@ function Register() {
                 zip: zip,
                 phoneNumber:phonen,
                 correoConfirmado:false,
-                codVeri:0
+                codVeri:0,
+                passlest:"NULL"
             }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             }).then(function (response) {
                 console.log(response);
+                alert("Favor Confirme el Email");
                 navigate("/")
-                alert("Registro exitoso");
+                
 
             }).catch(err => {//valida errores
                 console.log("error: " + err);

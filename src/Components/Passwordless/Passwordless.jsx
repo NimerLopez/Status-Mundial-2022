@@ -5,11 +5,11 @@ function Passwordless() {
     const navigate = useNavigate();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const correo = searchParams.get('correo');
+    const datax = searchParams.get('data');
     const Verificar=()=>{
-        console.log(correo);
+        console.log(datax);
         axios.post("http://localhost:3001/api/passwordless", {
-            email: correo
+            data: datax
         }, {
             headers: {
                 'Content-Type': 'application/json'
@@ -17,7 +17,8 @@ function Passwordless() {
         }).then(function (response) { 
             console.log(response.data)
         if (response.data.message !=="Datos Incorrectos") {                              
-            sessionStorage.setItem('Usuario',JSON.stringify(response.data.token));          
+            sessionStorage.setItem('Usuario',JSON.stringify(response.data.token));
+            sessionStorage.setItem('User_id',JSON.stringify(response.data.useDate.id));           
             navigate("/home")
         }else{
             alert("Datos Incorrectos")
