@@ -19,14 +19,19 @@ function CategoryCRUD() {
                   _id
                 }
               }`;
-            axios.post('http://localhost:4001/', {query}).then(function (response) {
-                console.log(response.data.data);
-                setCategory(response.data.data.Categorias);
-                setLoading(false);
-            }).catch(err => {
-                console.log("xxxxxxx");
-                console.log("Error",err);
-            });
+            axios.post('http://localhost:4000/', { query },
+                {
+                    headers: {
+                        Authorization: loggedUser //
+                    },
+                }).then(function (response) {
+                    console.log(response.data.data);
+                    setCategory(response.data.data.Categorias);
+                    setLoading(false);
+                }).catch(err => {
+                    console.log("xxxxxxx");
+                    console.log("Error", err);
+                });
             // Hacer algo con los datos
 
 

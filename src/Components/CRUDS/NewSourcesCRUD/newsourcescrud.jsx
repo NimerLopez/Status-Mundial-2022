@@ -33,23 +33,28 @@ function Newsourcescrud() {
                 myNewsSourceId: JSON.parse(sessionStorage.getItem('User_id')),
             };
 
-            axios.post('http://localhost:4001/', { query, variables }).then(function (response) {
-                console.log(response.data.data);
-                setLoadingNew(false);
-                setNew(response.data.data.MyNewsSource);
-                setCategory(response.data.data.Categorias);
-                setLoadingCategory(false);
-            }).catch(err => {
-                console.console.log(err);
-            });
+            axios.post('http://localhost:4000/', { query, variables },
+                {
+                    headers: {
+                        Authorization: loggedUser //
+                    },
+                }).then(function (response) {
+                    console.log(response.data.data);
+                    setLoadingNew(false);
+                    setNew(response.data.data.MyNewsSource);
+                    setCategory(response.data.data.Categorias);
+                    setLoadingCategory(false);
+                }).catch(err => {
+                    console.console.log(err);
+                });
         } else {
             //***Redirect to login***
             navigate("/")
         }
 
     }, []);
-    const DeleteResource=(id)=>{
-        axios.delete("http://localhost:3001/api/newSource/"+id,  {
+    const DeleteResource = (id) => {
+        axios.delete("http://localhost:3001/api/newSource/" + id, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + loggedUser
@@ -62,10 +67,10 @@ function Newsourcescrud() {
             alert("Datos incorrectos");
         });
     }
-const UpdateResource=(data)=>{
-    sessionStorage.setItem('DataSource',JSON.stringify(data));
-    navigate("/newSource")
-}
+    const UpdateResource = (data) => {
+        sessionStorage.setItem('DataSource', JSON.stringify(data));
+        navigate("/newSource")
+    }
     return (
         <div className="sources-box">
             <Header></Header>
@@ -85,9 +90,9 @@ const UpdateResource=(data)=>{
                                     <td>{newdata.name}</td>
                                     {categoriob.map((category) => (
                                         category._id === newdata.category_id ?
-                                            <td>{category.name}</td>:<></>                                           
+                                            <td>{category.name}</td> : <></>
                                     ))}
-                                    <td id="edit"><a href='' onClick={()=>UpdateResource(newdata)}>Edit</a>|<a href=''onClick={()=>DeleteResource(newdata._id)}>Delete</a></td>
+                                    <td id="edit"><a href='' onClick={() => UpdateResource(newdata)}>Edit</a>|<a href='' onClick={() => DeleteResource(newdata._id)}>Delete</a></td>
                                 </tr>
                             ))}
 
