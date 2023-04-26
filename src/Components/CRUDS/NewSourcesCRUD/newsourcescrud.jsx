@@ -48,7 +48,7 @@ function Newsourcescrud() {
                     console.console.log(err);
                 });
         } else {
-            //***Redirect to login***
+            //**Redirect to login**
             navigate("/")
         }
 
@@ -72,40 +72,42 @@ function Newsourcescrud() {
         navigate("/newSource")
     }
     return (
-        <div className="sources-box">
-            <Header></Header>
-            <h2>News Sources</h2>
-            <>
-                {loadingCategory && loadingNew ?
-                    (<p>Cargando..............</p>) :
-                    (
-                        <table className="sources-table">
-                            <tr className="menu">
-                                <th id="strong">Name</th>
-                                <th>Category</th>
-                                <th id="strong">Actions</th>
-                            </tr>
-                            {newob.map((newdata) => (
-                                <tr>
-                                    <td>{newdata.name}</td>
-                                    {categoriob.map((category) => (
-                                        category._id === newdata.category_id ?
-                                            <td>{category.name}</td> : <></>
-                                    ))}
-                                    <td id="edit"><a href='' onClick={() => UpdateResource(newdata)}>Edit</a>|<a href='' onClick={() => DeleteResource(newdata._id)}>Delete</a></td>
+        <>        <Header></Header>
+            <div className="sources-box">
+
+                <h2 className='titles'>News Sources</h2>
+                <>
+                    {loadingCategory && loadingNew ?
+                        (<p>Cargando..............</p>) :
+                        (
+                            <table className="sources-table">
+                                <tr className="menu">
+                                    <th id="strong">Name</th>
+                                    <th>Category</th>
+                                    <th id="strong">Actions</th>
                                 </tr>
-                            ))}
+                                {newob.map((newdata) => (
+                                    <tr>
+                                        <td>{newdata.name}</td>
+                                        {categoriob.map((category) => (
+                                            category._id === newdata.category_id ?
+                                                <td>{category.name}</td> : <></>
+                                        ))}
+                                        <td id="edit"><a href='' onClick={() => UpdateResource(newdata)}>Edit</a>|<a href='' onClick={() => DeleteResource(newdata._id)}>Delete</a></td>
+                                    </tr>
+                                ))}
 
-                        </table>
+                            </table>
 
-                    )
-                }
-            </>
+                        )
+                    }
+                </>
 
-            <div className="add-button-crudlink">
-                <input type="submit" name="A3" value="Add New"></input>
+                <div className="add-button-crudlink">
+                    <input type="submit" name="A3" value="Add New"></input>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

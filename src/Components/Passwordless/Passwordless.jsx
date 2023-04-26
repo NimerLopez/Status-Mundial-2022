@@ -1,3 +1,4 @@
+import './passwordless.css'
 import React, { useState, useEffect } from "react";
 import { useNavigate,useLocation } from "react-router"
 import axios from "axios";
@@ -29,13 +30,10 @@ function Passwordless() {
         });
     }
     return(
-        
         <div>
             <h1>Bienvenido</h1>
             <p>En esta seccion puede iniciar sesion solo con darle click al boton de abajo</p>
-            <br />
-            <br />
-            <button onClick={()=>Verificar()}>Login</button>
+            <button className="psw-less-btn" onClick={()=>Verificar()}>Login</button>
         </div>
     )
     ;

@@ -3,6 +3,7 @@
 }
 
 .inputs-source{
+    margin-top: 6%;
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -26,4 +27,14 @@ select{
     width: 48%;
     margin-bottom: 12%;
     margin-left:0% ;
+}
+
+h2{
+    font-size: 25px!important;
+    color:rgba(128, 128, 128, 0.603);
+}
+
+.add-button-crudlink{
+    margin-left: -47.5%!important;
+    margin-top: -5%!important;
 }

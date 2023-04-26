@@ -49,20 +49,20 @@ function Login() {
                     </h1>
                 </div>
                 <div className="login-inputs">
-                    <input type="text" name="A1" onChange={ev => setEmail(ev.target.value)} placeholder="Email Address"></input>
+                    <input type="text" name="A1" onChange={ev => setEmail(ev.target.value)} placeholder="Email Address"></input>                   
                 </div>
                 {estado ? (
-                    <div className="login-buttons">
-                    <input onClick={() => null} type="submit" name="A3" value="Ya valide sesion"></input>
+                    <div>
+                        <p>Favor Revise el correo</p>
                     </div>
                 ) :
                     (
                         <div className="login-buttons">
-                            <input onClick={() => Logival()} type="submit" name="A3" value="Login"></input>
+                            <input onClick={() => Logival()} type="submit" name="A3" value="Enviar"></input>
                         </div>
                     )}
 
-                <p>If you don´t have an acount. <a href="/register">Signup Here</a></p>
+                <p>If you don´t have an account. <a href="/register">Signup Here</a></p>
             </div>
         </>
     );

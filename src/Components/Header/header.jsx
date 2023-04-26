@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router"
 import axios from "axios";
 
+
 function Header() {
     const navigate = useNavigate();
     let [loggedUser, setval] = useState(JSON.parse(sessionStorage.getItem('Usuario')))
@@ -37,13 +38,12 @@ function Header() {
     }
     const handleOptionChange = (event) => {
         const selectedOption = event.target.value;
-        if (selectedOption != "Logout" && selectedOption !="ActualizarData") {
+        if (selectedOption !== "Logout" && selectedOption !=="ActualizarData") {
             navigate(selectedOption);
         }
         if (selectedOption === "Logout") {
             navigate("/");
             sessionStorage.removeItem('Usuario');
-            sessionStorage.removeItem('User_id');
         }
         if(selectedOption === "ActualizarData"){
             alert("entro");
@@ -62,20 +62,19 @@ function Header() {
     return (
         <>
             <div className="header">
-                <h3>Trodo</h3>
+                <h3 className='pagetitle' >Trodo</h3>
                 <div className="dropdown-content">
                     {loading ?
                         (
                             <select onChange={handleOptionChangeMenu1}>
-                                <option value="UserName">Menu</option>
-                                <option value="/">Login</option>
+                                <option value="/"> &#xf007; Login</option>
                                 <option value="/register">Register</option>
                             </select>                                                      
                         ) :
                         (
 
                             <select onChange={handleOptionChange}>
-                                <option value="UserName">{userDate.firstname}</option>
+                                <option value="UserName">&#xf007;{userDate.firstname}</option>
                                 <option value="Logout">Logout</option>
                                 <option value="/home">Home</option>
                                 <option value="/newSource">Agregar Recurso</option>
@@ -86,7 +85,6 @@ function Header() {
                                         <option value="/categoryadd">Agregar Categoria</option>
                                     </>):(null)
                                 }
-                                 <option value="ActualizarData">Inyectar Recurso</option>
                             </select>
                         )
                     }

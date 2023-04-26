@@ -1,19 +1,19 @@
 .sign-in-title{
-    margin: 5% 0% 12% -50%;
+    margin: 5% 0% 0% -50%;
 }
 .empty {
     border-color: red;
   }
 
 .sign-in-box{
-    margin-left: 1%;
+    margin-left: 2%;
     width: 700px;
     height: 600px;
 }
 
 .sign-in-inputs{ 
-    border-top: 1px  gray solid;
-    border-bottom: 1px  gray solid;
+    border-top: 1px  rgb(175, 173, 173) solid;
+    border-bottom: 1px  rgb(167, 165, 165) solid;
     padding-bottom: 3%;
 
 }
@@ -34,8 +34,9 @@
 .sign-in-buttons{
     margin-top:10%;
     gap: 1%;
-    
 }
+
+
 
 .sign-in-buttons input[value="Sign up"]{
     color: var(--whitecolor);
@@ -44,6 +45,13 @@
     height: 50px;
     border: none;
     margin-left: -35%;
+}
+
+.sign-in-buttons input[value="Sign up"]:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    transition: 0.2s;
 }
 
 sign-in-buttons input[placeholder="Address 1"]{

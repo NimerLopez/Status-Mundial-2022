@@ -1,9 +1,10 @@
-h2{
+.table-rss-title{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 35px; color:rgba(128, 128, 128, 0.603);
     border-bottom: 1px solid rgba(128, 128, 128, 0.37);
     margin-bottom: 5%;
     padding-bottom: 7px;
+    width: 90%;
 }
 
 #edit{
@@ -19,6 +20,7 @@ h2{
 .sources-table{
     width: 90%;
     border-collapse: collapse;
+    margin-bottom: 10%;
 }
 
 .sources-table tr{

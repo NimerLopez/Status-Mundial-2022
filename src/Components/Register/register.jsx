@@ -2,6 +2,7 @@ import './register.css'
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router"
 import axios from "axios";
+import Header from '../Header/header';
 
 function Register() {
     const navigate = useNavigate();
@@ -84,6 +85,8 @@ function Register() {
     let [email, setEmail] = useState('');
     let [contra, setContra] = useState('');
     return (
+        <>        
+        <Header></Header>     
         <div className="sign-in-box">
             <div className="sign-in-title">
                 <h1>
@@ -107,6 +110,7 @@ function Register() {
             </div>
 
         </div>
+        </>
     )
 }
 

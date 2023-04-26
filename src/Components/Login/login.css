@@ -103,14 +103,6 @@ nav .fa{
 
 /* ---- End of title/begin searching bar ---- */
 
-.search-container{
-    width: 100%;
-    height: 20vh;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 form{
     background: #fff;
@@ -127,16 +119,6 @@ form input{
     outline: none;
 }
 
-.search-container button{
-    background: rgb(85, 85, 85);
-    padding: 1.8% 50px;
-    outline: none;
-    border: none;
-    color: var(--whitecolor);
-    letter-spacing: 1px;
-    cursor: pointer;
-    margin-left: 10px;
-}
 
 form .fa-search{
     align-self: center;
@@ -328,9 +310,42 @@ col-6{
     width: 45%;
 }
 
+.login-buttons input[value="Enviar"]{
+    color: var(--whitecolor);
+    background-color: var(--itemsgraycolor);
+    margin-left: 14%;
+    height: 38px;
+    width: 45%;
+}
 
 
+.fact-title{
+    margin-bottom: 1%;
+    margin-left: 43%;
+    font-size: 20px;
+    border: none;
+}
 
+.input-verif{
+    height: 20px!important;
+    width: 12%;
+}
+
+.but-verif{
+    margin-left: 1%;
+    border: none;
+    height:25px;
+    width: 5%;
+    background-color: gray;
+    border-radius: 3px;
+}
+
+.but-verif:hover{
+    border: black solid 1px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
 
 
 

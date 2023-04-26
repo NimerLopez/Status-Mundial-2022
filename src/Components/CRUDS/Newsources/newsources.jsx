@@ -92,12 +92,13 @@ function Newsources() {
     }
 
     return (
+        <>
+        <Header></Header>
         <div className="sources-boxx">
-            <Header></Header>
             {loading ?
                 (<p>Cargando....</p>) : (
                     <>
-                        <h2>News Sources</h2>
+                        <h2 className='titles'>News Sources</h2>
                         <div className="inputs-source">
                             {dataEdit ?
                                 (<>
@@ -130,8 +131,8 @@ function Newsources() {
 
                     </>
                 )};
-
         </div>
+        </>
     );
 }
 

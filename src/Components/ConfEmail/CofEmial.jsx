@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { useNavigate,useLocation } from "react-router"
 import axios from "axios";
 function ConfEmail() {
@@ -15,7 +14,7 @@ function ConfEmail() {
                 'Content-Type': 'application/json'
             }
         }).then(function (response) {
-            navigate('/');
+            navigate('/home');
             console.log(response);
         }).catch(err => {//valida errores
             console.log("error: " + err);
@@ -23,10 +22,9 @@ function ConfEmail() {
         });
     }
     return(
-        
         <div>
             <h1>Bienvenido</h1>
-            <button onClick={()=>Verificar()}>Verificar</button>
+            <button className="" onClick={()=>Verificar()}>Verificar</button>
         </div>
     )
     ;

@@ -36,7 +36,7 @@ function CategoryCRUD() {
 
 
         } else {
-            //***Redirect to login***
+            //**Redirect to login**
             navigate("/")
         }
     }, []);

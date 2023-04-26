@@ -5,7 +5,9 @@ import { useNavigate } from "react-router"
 import Header from '../Header/header';
 import ToFact from './ToFactory';
 
+
 function Login() {
+
     const navigate = useNavigate();
     const userUrl = "http://localhost:3001/api/login";
     let [email, setEmail] = useState('');
@@ -36,26 +38,7 @@ function Login() {
                     setEstado(true);
                     setRespuesta(response.data.token);
                     console.log(response.data.useDate.id); 
-                    sessionStorage.setItem('User_id',JSON.stringify(response.data.useDate.id));   
-                    // Dateuser = response.data.token;
-                    // sessionStorage.setItem('Usuario',JSON.stringify(Dateuser));
-                    // console.log("luisraton", Dateuser);
-                    // navigate("/home")
-                    // axios.get('http://localhost:3001/api/new', {
-                    //     headers: {
-                    //         'Authorization': 'Bearer ' + Dateuser,
-                    //         'Content-Type': 'application/json'
-                    //     }
-                    // }).then(function (response) {
-                    //     console.log(response.data);                       
-
-                    // }).catch(err => {//valida errores
-                    //     console.log("error: " + err);
-                    // });
-
-                    //document.cookie = `token=${response.data.token}`;
-                    //sessionStorage.setItem('TokenUser', JSON.stringify(Dateuser));//se guarda en la sesion   
-                    //navigate("/home");
+                    sessionStorage.setItem('User_id',JSON.stringify(response.data.useDate.id));                      
                 } else {
                     alert("Datos Incorrectos")
                 }
@@ -86,8 +69,8 @@ function Login() {
                     <div className="login-buttons">
                         <input onClick={() => Logival()} type="submit" name="A3" value="Login"></input>
                     </div>
-                    <p>If you don´t have an acount. <a href="/register">Signup Here</a></p>
-                    <p>forgot the password. <a href="/passworles/solicitud">click here</a></p>                   
+                    <p>If you don´t have an account. <a href="/register">Signup Here</a></p>
+                    <p>Forgot the password? <a href="/passwordless/solicitud">Click here</a></p>    
                 </div>
             )}{/* fin de Tofact validador */}
 

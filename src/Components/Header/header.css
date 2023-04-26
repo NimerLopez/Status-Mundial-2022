@@ -1,25 +1,112 @@
 .header{
     margin-top: 2%;
-    margin-left: 4%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 5%;
+    border-bottom: 0.7px solid gainsboro;
 }
 
-
-.dropdown-content{
-    width:12%;
-    margin-right :7%;
-}
-
-h3{
+.pagetitle{
+    padding-bottom: 1%;
+    margin-left: 4%;
     font-size: 40px;
+    cursor: pointer;
 }
-.dropdown-content select{
+
+
+/* .dropdown-content{
+        margin-right :7%;
+} */
+
+
+
+/* .dropdown-content select{
+    margin-top: 12%;
+    cursor: pointer;
+    font-family: 'Arial', 'Font Awesome 5 Free';
+    height: 30px;
+    width: 100px;
     background-color:gray ;
-    border:none;
+    border: 1px solid black;
 }
+
+.dropdown-content select:hover{
+    transition: 0.2s;
+    height: 35px;
+    width: 110px;
+    background-color: rgb(250, 250, 250);
+    color: rgb(138, 138, 138);
+}   
 
 .dropdown-content option{
-    background-color:white ;
-}
+    height: 10px;
+    background-color:rgb(255, 255, 255) ;
+    border-bottom: 1px solid black;
+} */
+
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    background: #7c7c7c;
+    flex: 1;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    color:#fff;
+    cursor:pointer;
+    font-family: 'Arial', 'Font Awesome 5 Free';
+ }
+
+ select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #7c7c7c;
+    flex: 1;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    color:#fff;
+    cursor:pointer;
+    font-family: 'Arial', 'Font Awesome 5 Free';
+ }
+
+ select:hover{
+    background: #4d4d4d;
+    transition: 0.2s;
+ }
+
+ select::-ms-expand {
+    display: none;
+ }
+
+ .dropdown-content {
+    margin-top: 0.7%;
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+ }
+ .dropdown-content::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+ }
+ .dropdown-content:hover::after {
+    color: #ffffff;
+    background: #000000;
+ }
+

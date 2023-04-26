@@ -88,9 +88,9 @@ function Newsources() {
 
     let [category, SetCategory] = useState('');
     return (
+        <>
+        <Header></Header>
         <div className="sources-boxx">
-            <Header></Header>
-
             {dataEdit ?
                 (
                     <>
@@ -113,6 +113,7 @@ function Newsources() {
                     </>
                 )}
         </div>
+        </>
     );
 
 }
