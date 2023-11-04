@@ -1,41 +1,40 @@
-import { createRef } from 'react';
+//import { createRef } from 'react';
 import { Route, Routes,useNavigate } from 'react-router';
 import React, {useState, useEffect} from "react";
 import Header from '../Header/header';
-import Team from '../Home/team';
+import StandingsMost from './StandingsMos';
 import axios from "axios";
-import "./style.css";
 
-function Home(){
+function Standings(){
    let navigate=useNavigate();
    let [loggedUser, setval] = useState(JSON.parse(sessionStorage.getItem('TokenUser')))
-   let [team, setTeam] = useState({});
+   let [stadi, setSta] = useState({});
 
    useEffect(() => {
-      axios.get('https://cors-anywhere.herokuapp.com/http://api.cup2022.ir/api/v1/team',{
+      axios.get('https://cors-anywhere.herokuapp.com/http://api.cup2022.ir/api/v1/standings',{
          headers: {
          'Authorization': 'Bearer '+loggedUser,
          'Content-Type':'application/json'
           }
      }).then(function (response) {
          console.log(response);
-         setTeam(response.data.data);
+         setSta(response.data.data);
 
        }).catch(err=>{//valida errores
          console.log("error: "+err);
        });
-
+       
 
    }, []);
-   const LlenarTeam = (
-      team.length ? <Team team={team} /> : <p>Loading...</p>
+   const LlenarEstad = (
+        stadi.length ? <StandingsMost stadi={stadi} loggedUser={loggedUser} /> : <p>Loading...</p>
     )
    
 
  return(
- <div id='Hola'>
+ <div id='header'>
    {<Header/>}
-   {LlenarTeam}
+   {LlenarEstad}
  </div>);   
 }
-export default Home;
+export default Standings;

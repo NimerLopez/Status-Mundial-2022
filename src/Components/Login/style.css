@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #720435;
+    height: 100vh;
+}
+
+.container1 {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-70%, -70%);
+    width: 400px;
+    border-radius: 10px;
+    color: white;
+}
+
+.catar {
+    position: absolute;
+    top: 55%;
+    right: 60%;
+    transform: translate(-60%, -60%);
+}
+
+.container1 h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.container1 #contain {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#contain .tex_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.tex_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    color: black;
+}
+
+.tex_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.tex_field span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: goldenrod;
+    transition: .5s;
+}
+
+.tex_field input:focus~label,
+.tex_field input:valid~label {
+    font-style: italic;
+    top: -8px;
+    color: rgb(255, 255, 255);
+}
+
+.tex_field input:focus~span::before,
+.tex_field input:valid~span::before {
+    width: 100%;
+}
+
+.pass {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+}
+
+.pass:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: white;
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    background-color: goldenrod;
+    transition: .5s;
+}
+
+.nores {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 17px;
+    color:rgb(0, 145, 255);
+}
+
+.nores a {
+    color: white;
+    text-decoration: none;
+}
+
+.nores a:hover {
+    text-decoration: underline;
+}

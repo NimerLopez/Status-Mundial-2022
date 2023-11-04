@@ -5,9 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+// const cors = require('cors');
+// const corsOptions ={
+//     origin:'http://localhost:3000', 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// };
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// App.use(cors(corsOptions));
 root.render(
-  <BrowserRouter >
+  <BrowserRouter>
     <App/>
   </BrowserRouter>
 );

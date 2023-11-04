@@ -1,0 +1,87 @@
+.filter-l3{
+}
+
+.contenedor{
+
+    margin-top: 2%;
+}
+
+.groups-l1{
+    margin-top: 8%;
+    margin-left: 5%;
+}
+
+h3{
+    margin-right: 2%;
+    margin-bottom: -5%;
+    font-size: 500%;
+    color: white;
+}
+
+.groups-l1 h2{
+}
+
+.groups-l1 img{
+    height: 100px;
+    width: 150px;
+}
+
+.groups-details{
+    margin-top: 50px;
+}
+
+.table-standings{
+    background-color: rgb(255, 255, 255);
+    margin-left: 5px;
+    margin-top: 8%;
+    height: 50%;
+    
+}
+
+.table-standings th{
+border-right: 1px dashed black;
+}
+
+
+
+.groups-l2{
+    display: flex;
+    
+}
+
+button{
+    background-color:  rgba(254,195,16,1);
+    border-radius: 7px;
+    padding:10px;
+}
+
+button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor:pointer;
+    font-size: 86%;
+}
+
+input{
+    padding: 5px;
+    margin-top: 1%;
+}
+
+.table-standings2{
+    background-color: rgb(255, 255, 255);
+    margin-left: 5px;
+    height: 50%;
+    
+}
+
+.table-standings2 th{
+border-right: 1px dashed black;
+}
+
+.filter-l3{
+    margin-left: 5%;
+}
+
+.filter-l3 img{
+    height: 100px;
+    width: 150px;
+}

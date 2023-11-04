@@ -1,0 +1,68 @@
+.all-body-matches{
+     background-image: url(https://www.qatar2022.qa/sites/default/files/styles/1440x815/public/2022-08/Khalifa-International-Stadium.jpg?h=b5673621&itok=_sZr4yIe);
+    background-attachment: fixed;    
+} 
+*{
+    
+}
+.all-matches{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 15%;
+}
+
+.all-matches-details{
+    margin: 5%;
+    padding: 2%;
+    border: solid rgba(255, 255, 255, 0.644);
+    border-radius: 5%;
+    background-color:rgba(255, 255, 255, 0.774);
+}
+
+.all-matches-details img{
+    width: 25%;
+    height: 25%;
+} 
+
+.botones{
+    margin-top: 5%;
+}
+
+.menu button{
+    margin-top: 1%;
+}
+
+.menu{
+    color: white;
+    font-size: 3vh;
+}
+
+.info{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 6%;
+}
+
+.info button{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:white ;
+}
+
+.info p{
+    color: black;
+}
+
+.table-details{
+    margin: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.match-details{
+    margin-top: 5%;
+}
+
+td{
+    background-color: rgba(255, 255, 255, 0.774);
+    border: black solid;
+    
+}

@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 90px 20px 0;
+}
+
+header {
+    background: rgb(254,195,16);
+    background: linear-gradient(90deg, rgba(254,195,16,1) 21%, rgba(16,119,196,1) 21%);
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: solid white;
+}
+a:is(:link,:active,:visited).active {    
+    background-color:  rgb(255, 255, 255);
+    transition: 0.5s;
+    border-radius: 5px;
+  }
+
+.nav img{
+    margin-right: 20%;
+    height: 100px;
+    width: 100px;
+    padding-top: 1%;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: black ;
+    text-decoration: none !important;
+}
+
+.logo {
+    font-size: 30px;
+    padding: 0 40px;
+    line-height: 60px;
+    width: 150px;
+    height: 79px;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 62px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link {
+    padding: 10px 12px;
+}
+
+.nav-menu-link:hover {
+    background-color: #8f8d8d;
+    transition: 0.5s;
+    border-radius: 5%;
+}
+
+.nav-toggle {
+    color: rgb(253, 251, 251);
+    background-color: #720435;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    display: none;
+}
+
+@media (max-width:768px) {
+    body {
+        padding-top: 70px;
+    }
+    header {
+        height: 60px;
+    }
+    .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+    }
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: rgb(107, 108, 109);
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+        height: calc(100%-60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .nav-menu-item {
+        line-height: 70px;
+    }
+    .nav-menu-link:hover {
+        background-color: rgb(2, 170, 46);
+        transition: 0.5s;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu_visible {
+        left: 0;
+    }
+}

@@ -1,98 +1,49 @@
-import './header.css';
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router"
-import axios from "axios";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router";
+import catar from "../img/qatar.png";
+import "./style.css";
 
 
-function Header() {
+
+
+function Header(props) {
     const navigate = useNavigate();
-    let [loggedUser, setval] = useState(JSON.parse(sessionStorage.getItem('Usuario')))
-    const [loading, setLoading] = useState(true);
-    let [userDate, setUser] = useState({});
+    let [loggedUser, setval] = useState(JSON.parse(sessionStorage.getItem('TokenUser')));
+
     useEffect(() => {
         if (loggedUser) {
-            //request my new by token id
-            axios.get('http://localhost:3001/api/userdata', {
-                headers: {
-                    'Authorization': 'Bearer ' + loggedUser,
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (response) {
-                console.log(response.data);
-                setUser(response.data);
-                setLoading(false);
+            console.log("xd");
 
-            }).catch(err => {//valida errores
-                console.log("error: " + err);
-                setLoading(false);
-            });
         } else {
-            setLoading(true);
+            //***Redirect to login***
+            navigate("/")
         }
+
     }, []);
-    const handleOptionChangeMenu1 = (event) => {
-        const selectedOption = event.target.value;
-        if (selectedOption) {
-            navigate(selectedOption);
-        }
+    const Cerrar = () => {
+        sessionStorage.clear();
+        setval(loggedUser.filter());
+
     }
-    const handleOptionChange = (event) => {
-        const selectedOption = event.target.value;
-        if (selectedOption !== "Logout" && selectedOption !=="ActualizarData") {
-            navigate(selectedOption);
-        }
-        if (selectedOption === "Logout") {
-            navigate("/");
-            sessionStorage.removeItem('Usuario');
-        }
-        if(selectedOption === "ActualizarData"){
-            alert("entro");
-            axios.post('http://localhost:3001/api/new', {
-                headers: {
-                    'Authorization': 'Bearer ' + loggedUser,
-                    'Content-Type': 'application/json'
-                }
-            }).then(function (response) {
-                alert("Actualizacion Exitosa: Favor Recargue la pagina")
-            }).catch(err => {//valida errores
-                console.log("error: " + err);               
-            });
-        }
-    }
+
     return (
-        <>
-            <div className="header">
-                <h3 className='pagetitle' >Trodo</h3>
-                <div className="dropdown-content">
-                    {loading ?
-                        (
-                            <select onChange={handleOptionChangeMenu1}>
-                                <option value="/"> &#xf007; Login</option>
-                                <option value="/register">Register</option>
-                            </select>                                                      
-                        ) :
-                        (
+        <header className="Herder">
+            <nav className="nav">             
+                <img src={catar} className="catar"></img>
+                <a className="logo nav-link" href="#">Trodo</a>
+                <button className="nav-toggle">
+                    <i className="fa-solid fa-bars-progress"></i>
+                </button>
+                <ul className="nav-menu nav-menu_visible">
+                    <li className="nav-menu-item"><NavLink className="nav-menu-link nav-link" to="/home">Home</NavLink></li>
+                    <li className="nav-menu-item"><NavLink className="nav-menu-link nav-link" to="/standing">Standings</NavLink></li>
+                    <li className="nav-menu-item"><NavLink className="nav-menu-link nav-link" to="/matcht">Matchs</NavLink></li>
+                    <li className="nav-menu-item"><NavLink onClick={() => Cerrar()} className="nav-menu-link nav-link" >Cerrar Sesion</NavLink></li>
+                </ul>
 
-                            <select onChange={handleOptionChange}>
-                                <option value="UserName">&#xf007;{userDate.firstname}</option>
-                                <option value="Logout">Logout</option>
-                                <option value="/home">Home</option>
-                                <option value="/newSource">Agregar Recurso</option>
-                                <option value="/newSourcetable">Tabla Recurso</option>
-                                {userDate.role === "admin" ?
-                                    (<>
-                                        <option value="/categorytable">Tabla de Categorias</option>
-                                        <option value="/categoryadd">Agregar Categoria</option>
-                                    </>):(null)
-                                }
-                            </select>
-                        )
-                    }
-
-                </div>
-            </div>
-
-        </>
+            </nav>
+        </header>
     );
 }
 

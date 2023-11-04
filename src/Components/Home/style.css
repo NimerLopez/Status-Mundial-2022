@@ -1,0 +1,77 @@
+#grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+#grid p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
+}
+
+#grid div {
+    margin: 30px;
+}
+
+
+p {
+    color: white;
+}
+
+#plast{
+    margin-bottom: 5%;
+}
+
+
+h2{
+    color: white;
+}
+
+.team-details img{
+    border-radius: 2%;
+    margin-bottom: 2%;
+    height: 170px;
+    width: 280px;
+}
+
+.team-details{
+}
+
+#go-back{
+    background-color:  rgba(254,195,16,1);
+    border-radius: 7px;
+    margin-top: 5%;
+    padding:10px;
+}
+
+#imga{
+    background-image: url("../img/catar.png");
+    background-color: red;
+}
+
+#go-back:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor:pointer;
+    font-size: 100%;
+}
+.botones {
+    width: 75px;
+    height: 40px;
+    background-color: wheat;
+    color: black;
+    cursor: pointer;
+}
+
+.all-teams img{
+    margin-top: 2%;
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.all-teams img:hover{
+    cursor: pointer;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.685), 0 6px 20px 0 rgba(0, 0, 0, 0.582);
+}
+
+.all-teams{
+    
+}

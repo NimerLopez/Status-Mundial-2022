@@ -1,37 +1,28 @@
+import logo from './logo.svg';
 import './App.css';
-import Login from './Components/Login/login';
-import Home from './Components/Home/home';
-import Footer from './Components/Footer/footer';
-import Register from './Components/Register/register';
-import CategoryCRUD from './Components/CRUDS/Categorycruds/categorycrud';
-import Categoryadd from './Components/CRUDS/Categoryadd/category';
-import Newsources from './Components/CRUDS/Newsources/newsources';
-import NewsourcesCrud from './Components/CRUDS/NewSourcesCRUD/newsourcescrud';
-import ConfEmial from './Components/ConfEmail/CofEmial';
-import Passworles from './Components/Passwordless/Passwordless';
-import PassworlesSoli from './Components/Passwordless/Solicitud_Passwordless';
+import Login from './components/Login/login';
+import Register from './components/Register/Register';
+import Header from './components/Header/header';
+import Home from './components/Home/home';
+import Matcht from './components/Matchs/Matchs';
+import Standings from './components/Standings/Standings';
 import { Route, Routes } from 'react-router-dom';
-
-
-//npm i --save react-toastify react-spinners axios react-router-dom
-
 
 function App() {
   return (
     <div className="App">      
       <Routes>
         <Route path='/' element={<Login/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/register' element={<Register/>}/> 
-        <Route path='/newSource' element={<Newsources/>}/>     
-        <Route path='/categoryadd' element={<Categoryadd/>}/>
-        <Route path='/categorytable' element={<CategoryCRUD/>}/>
-        <Route path='/newSourcetable' element={<NewsourcesCrud/>}/>
-        <Route path='/confirmar' element={<ConfEmial/>}/>
-        <Route path='/passwordless' element={<Passworles/>}/>
-        <Route path='/passwordless/solicitud' element={<PassworlesSoli/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/home'  element={<Home/>}/> 
+        <Route path='/matcht' element={<Matcht/>}/>
+        <Route path='/standing' element={<Standings/>}/>
+             
       </Routes>
-      <Footer/>
+
+
+
+                 
     </div>
   );
 }
